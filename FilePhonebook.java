@@ -96,8 +96,8 @@ public class FilePhonebook {
                             System.out.println(penyimpananKontak);
                             System.out.println("\nNama Kontak     : " + namaKontakYangDicari);
                             ambilData.cariKontak();
-                        break;
                         }
+                        break;
                     
                     // Telepon kontak
                     case 3:
