@@ -127,6 +127,17 @@ public class FilePhonebook {
                             System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
                         }
 
+                    case 4:
+                        scanner.nextLine();
+                        System.out.print("Masukkan nama kontak yang ingin di-ubah statusnya: ");
+                        String namaKontakYangInginDirubahStatusnya = scanner.nextLine();
+                        
+                        if (!penyimpananKontak.containsKey(namaKontakYangInginDirubahStatusnya)){
+                            System.out.println("Kontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!";
+                        }
+
+
+
 
                 }
             }
