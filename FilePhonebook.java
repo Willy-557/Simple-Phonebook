@@ -132,10 +132,37 @@ public class FilePhonebook {
                             break;
                         }
                         else {
-                            System.out.println();
+
                             Kontak ubahStatus = penyimpananKontak.get(namaKontakYangInginDirubahStatusnya);
-                            ubahStatus.status = "Blokir";
-                            System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-blokir!");
+                            String kondisiStatus = ubahStatus.status;
+
+                            System.out.println("\n-- Menu Status --");
+                            System.out.println("1. Blokir");
+                            System.out.println("2. Un-Block");
+                            System.out.print(">> ");
+                            int choice = scanner.nextInt();
+
+                            if (choice == 1){
+                                if (kondisiStatus.equalsIgnoreCase("Blokir")){
+                                    System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' sudah anda blokir sebelumnya!");
+                                }
+                                else {
+                                    ubahStatus.status = "Blokir";
+                                    System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-blokir!");
+                                }
+                            }
+                            else if (choice == 2){
+                                if (kondisiStatus.equalsIgnoreCase("Belum di-blokir")){
+                                    System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' belum anda blokir!");
+                                }
+                                else {
+                                    ubahStatus.status = "Belum di-blokir";
+                                    System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-unblock!");
+                                }
+                            }
+                            else {
+                                System.out.println("Harap masukka menu 1 dan 2 saja!");
+                            }
                         }
                         break;
                 }
