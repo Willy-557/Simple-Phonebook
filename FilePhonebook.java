@@ -21,6 +21,11 @@ class Kontak{
         this.status = status;
     }
 
+    void cariKontak(){
+        System.out.println("Nomor Hp: " + this.nomorHP);
+        System.out.println("");
+    }
+
 
 
 
@@ -76,7 +81,17 @@ public class FilePhonebook {
                         penyimpananKontak.put(namaKontak, dataKontakBaru);
                         System.out.println("Berhasil menyimpan kontak bernama '" + namaKontak + "'.");
                         break;
-                
+                    
+                    case 2:
+                        System.out.print("Masukkan nama kontak yang ingin dicari: ");
+                        String namaKontakYangDicari = scanner.nextLine();
+
+                        if (!penyimpananKontak.containsKey(namaKontakYangDicari)){
+                            System.out.println("Nama kontak '" + namaKontakYangDicari + "' tidak ada di dalam penyimpanan!");
+                        }
+                        else {
+
+                        }
                 }
             }
 
