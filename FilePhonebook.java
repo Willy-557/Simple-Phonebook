@@ -114,9 +114,17 @@ public class FilePhonebook {
                         }
                         else {
                             Kontak ambilNomor = penyimpananKontak.get(namaYangInginDiTelepon);
-                            String noTelp = ambilNomor.nomorHP;
-                            System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
+                            String cekDataStatus = ambilNomor.status;
+                            if (cekDataStatus.equalsIgnoreCase("Blokir")){
+                                System.out.println("Kontak bernama '" + namaYangInginDiTelepon + "' tidak bisa ditelpon dikarenakan sudah di-blokir");
+                            }
+                            else {
+                                String noTelp = ambilNomor.nomorHP;
+                                System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
+                            }
+                            
                         }
+                        break;
                     
                     // Ubah status
                     case 4:
@@ -133,10 +141,7 @@ public class FilePhonebook {
                             ubahStatus.status = "Blokir";
                             System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-blokir!");
                         }
-
-
-
-
+                        break;
                 }
             }
 
