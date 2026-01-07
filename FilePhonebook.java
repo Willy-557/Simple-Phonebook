@@ -116,7 +116,11 @@ public class FilePhonebook {
                         if (!penyimpananKontak.containsKey(namaYangInginDiTelepon)){
                             System.out.println("Kontak bernama '" + namaYangInginDiTelepon + "' tidak ada");
                         }
-                        
+                        else {
+                            Kontak ambilNomor = penyimpananKontak.get(namaYangInginDiTelepon);
+                            String noTelp = ambilNomor.nomorHP;
+                            System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
+                        }
 
 
                 }
