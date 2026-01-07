@@ -86,16 +86,19 @@ public class FilePhonebook {
 
                         String statusKontak = "Belum di-blokir";
 
-                        if (!grupKontak.equals("Keluarga") || !grupKontak.equals("Kantor")){
-                            System.out.println("\nInput Grup Kontak harus Keluarga / Kantor!");
-                            break;
-                        }
-                        else {
+                        if ((grupKontak.equalsIgnoreCase("Keluarga")) || (grupKontak.equalsIgnoreCase("Kantor"))){
                             Kontak dataKontakBaru = new Kontak(noHP, emailKontak, grupKontak, statusKontak);
                             penyimpananKontak.put(namaKontak, dataKontakBaru);
                             System.out.println("\nBerhasil menyimpan kontak bernama '" + namaKontak + "'.");
-                            break;
+                            
                         }
+                        else {
+                            System.out.println("\nInput Grup Kontak harus Keluarga / Kantor!");
+
+                            
+                            
+                        }
+                        break;
                     
                     case 2:
                         scanner.nextLine();
@@ -136,7 +139,11 @@ public class FilePhonebook {
                             System.out.println("Kontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!");
                             break;
                         }
-                        
+                        else {
+                            Kontak ubahStatus = penyimpananKontak.get(namaKontakYangInginDirubahStatusnya);
+                            ubahStatus.status = "Blokir";
+                            System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-blokir!");
+                        }
 
 
 
