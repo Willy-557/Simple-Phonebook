@@ -133,8 +133,10 @@ public class FilePhonebook {
                         String namaKontakYangInginDirubahStatusnya = scanner.nextLine();
                         
                         if (!penyimpananKontak.containsKey(namaKontakYangInginDirubahStatusnya)){
-                            System.out.println("Kontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!";
+                            System.out.println("Kontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!");
+                            break;
                         }
+                        
 
 
 
