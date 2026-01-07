@@ -27,22 +27,6 @@ class Kontak{
         System.out.println("Grup Kontak     : " + this.grup);
         System.out.println("Status Kontak   : " + this.status);
     }
-
-    void teleponKontak(){
-        System.out.println();
-    }
-
-    
-
-
-
-
-
-
-
-
-
-    
 }
 
 public class FilePhonebook {
@@ -122,11 +106,11 @@ public class FilePhonebook {
                     // Telepon kontak
                     case 3:
                         scanner.nextLine();
-                        System.out.print("Masukkan nama kontak yang ingin ditelepon: ");
+                        System.out.print("\nMasukkan nama kontak yang ingin ditelepon: ");
                         String namaYangInginDiTelepon = scanner.nextLine();
 
                         if (!penyimpananKontak.containsKey(namaYangInginDiTelepon)){
-                            System.out.println("Kontak bernama '" + namaYangInginDiTelepon + "' tidak ada");
+                            System.out.println("\nKontak bernama '" + namaYangInginDiTelepon + "' tidak ada");
                         }
                         else {
                             Kontak ambilNomor = penyimpananKontak.get(namaYangInginDiTelepon);
@@ -137,11 +121,11 @@ public class FilePhonebook {
                     // Ubah status
                     case 4:
                         scanner.nextLine();
-                        System.out.print("Masukkan nama kontak yang ingin di-ubah statusnya: ");
+                        System.out.print("\nMasukkan nama kontak yang ingin di-ubah statusnya: ");
                         String namaKontakYangInginDirubahStatusnya = scanner.nextLine();
                         
                         if (!penyimpananKontak.containsKey(namaKontakYangInginDirubahStatusnya)){
-                            System.out.println("Kontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!");
+                            System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' tidak ada!");
                             break;
                         }
                         else {
