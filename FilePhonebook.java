@@ -28,6 +28,12 @@ class Kontak{
         System.out.println("Status Kontak   : " + this.status);
     }
 
+    void teleponKontak(){
+        System.out.println();
+    }
+
+    
+
 
 
 
@@ -46,7 +52,7 @@ public class FilePhonebook {
         HashMap<String, Kontak> penyimpananKontak = new HashMap<>();
         
         while (true){
-            System.out.println("----- PhoneBook -----");
+            System.out.println("\n----- PhoneBook -----");
             System.out.println("1. Tambah kontak");
             System.out.println("2. Cari kontak berdasarkan nama");
             System.out.println("3. Telepon kontak");
@@ -59,14 +65,14 @@ public class FilePhonebook {
                 System.out.println();
             }
             else if (opsi > 5 || opsi < 0){
-                System.out.println("Invalid input!");
+                System.out.println("\nInvalid input!");
                 continue;
             }
             else {
                 switch (opsi) {
                     case 1:
                         scanner.nextLine();
-                        System.out.print("Masukkan nama: ");
+                        System.out.print("\nMasukkan nama: ");
                         String namaKontak = scanner.nextLine();
 
                         System.out.print("Masukkan nomor HP: ");
@@ -83,22 +89,36 @@ public class FilePhonebook {
                         Kontak dataKontakBaru = new Kontak(noHP, emailKontak, grupKontak, statusKontak);
                         
                         penyimpananKontak.put(namaKontak, dataKontakBaru);
-                        System.out.println("Berhasil menyimpan kontak bernama '" + namaKontak + "'.");
+                        System.out.println("\nBerhasil menyimpan kontak bernama '" + namaKontak + "'.");
                         break;
                     
                     case 2:
                         scanner.nextLine();
-                        System.out.print("Masukkan nama kontak yang ingin dicari: ");
+                        System.out.print("\nMasukkan nama kontak yang ingin dicari: ");
                         String namaKontakYangDicari = scanner.nextLine();
 
                         if (!penyimpananKontak.containsKey(namaKontakYangDicari)){
-                            System.out.println("Nama kontak '" + namaKontakYangDicari + "' tidak ada di dalam penyimpanan!");
+                            System.out.println("\nNama kontak '" + namaKontakYangDicari + "' tidak ada di dalam penyimpanan!");
                         }
                         else {
                             Kontak ambilData = penyimpananKontak.get(namaKontakYangDicari);
-                            System.out.println("Nama Kontak     : " + namaKontakYangDicari);
+                            System.out.println(penyimpananKontak);
+                            System.out.println("\nNama Kontak     : " + namaKontakYangDicari);
                             ambilData.cariKontak();
+                        break;
                         }
+                    
+                    case 3:
+                        scanner.nextLine();
+                        System.out.print("Masukkan nama kontak yang ingin ditelepon: ");
+                        String namaYangInginDiTelepon = scanner.nextLine();
+
+                        if (!penyimpananKontak.containsKey(namaYangInginDiTelepon)){
+                            System.out.println("Kontak bernama '" + namaYangInginDiTelepon + "' tidak ada");
+                        }
+                        
+
+
                 }
             }
 
