@@ -86,11 +86,16 @@ public class FilePhonebook {
 
                         String statusKontak = "Belum di-blokir";
 
-                        Kontak dataKontakBaru = new Kontak(noHP, emailKontak, grupKontak, statusKontak);
-                        
-                        penyimpananKontak.put(namaKontak, dataKontakBaru);
-                        System.out.println("\nBerhasil menyimpan kontak bernama '" + namaKontak + "'.");
-                        break;
+                        if (!grupKontak.equals("Keluarga") || !grupKontak.equals("Kantor")){
+                            System.out.println("\nInput Grup Kontak harus Keluarga / Kantor!");
+                            break;
+                        }
+                        else {
+                            Kontak dataKontakBaru = new Kontak(noHP, emailKontak, grupKontak, statusKontak);
+                            penyimpananKontak.put(namaKontak, dataKontakBaru);
+                            System.out.println("\nBerhasil menyimpan kontak bernama '" + namaKontak + "'.");
+                            break;
+                        }
                     
                     case 2:
                         scanner.nextLine();
