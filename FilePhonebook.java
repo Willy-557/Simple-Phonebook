@@ -70,6 +70,8 @@ public class FilePhonebook {
             }
             else {
                 switch (opsi) {
+
+                    // Tambah kontak
                     case 1:
                         scanner.nextLine();
                         System.out.print("\nMasukkan nama: ");
@@ -100,6 +102,7 @@ public class FilePhonebook {
                         }
                         break;
                     
+                    // Cari kontak
                     case 2:
                         scanner.nextLine();
                         System.out.print("\nMasukkan nama kontak yang ingin dicari: ");
@@ -116,6 +119,7 @@ public class FilePhonebook {
                         break;
                         }
                     
+                    // Telepon kontak
                     case 3:
                         scanner.nextLine();
                         System.out.print("Masukkan nama kontak yang ingin ditelepon: ");
@@ -129,7 +133,8 @@ public class FilePhonebook {
                             String noTelp = ambilNomor.nomorHP;
                             System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
                         }
-
+                    
+                    // Ubah status
                     case 4:
                         scanner.nextLine();
                         System.out.print("Masukkan nama kontak yang ingin di-ubah statusnya: ");
