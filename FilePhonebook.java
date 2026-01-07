@@ -22,9 +22,13 @@ class Kontak{
     }
 
     void cariKontak(){
-        System.out.println("Nomor Hp: " + this.nomorHP);
-        System.out.println("");
+        System.out.println("Nomor HP Kontak : " + this.nomorHP);
+        System.out.println("Email Kontak    : " + this.email);
+        System.out.println("Grup Kontak     : " + this.grup);
+        System.out.println("Status Kontak   : " + this.status);
     }
+
+
 
 
 
@@ -83,6 +87,7 @@ public class FilePhonebook {
                         break;
                     
                     case 2:
+                        scanner.nextLine();
                         System.out.print("Masukkan nama kontak yang ingin dicari: ");
                         String namaKontakYangDicari = scanner.nextLine();
 
@@ -90,7 +95,9 @@ public class FilePhonebook {
                             System.out.println("Nama kontak '" + namaKontakYangDicari + "' tidak ada di dalam penyimpanan!");
                         }
                         else {
-
+                            Kontak ambilData = penyimpananKontak.get(namaKontakYangDicari);
+                            System.out.println("Nama Kontak     : " + namaKontakYangDicari);
+                            ambilData.cariKontak();
                         }
                 }
             }
