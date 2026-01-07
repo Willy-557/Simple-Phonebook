@@ -76,13 +76,9 @@ public class FilePhonebook {
                             Kontak dataKontakBaru = new Kontak(noHP, emailKontak, grupKontak, statusKontak);
                             penyimpananKontak.put(namaKontak, dataKontakBaru);
                             System.out.println("\nBerhasil menyimpan kontak bernama '" + namaKontak + "'.");
-                            
                         }
                         else {
                             System.out.println("\nInput Grup Kontak harus Keluarga / Kantor!");
-
-                            
-                            
                         }
                         break;
                     
@@ -116,13 +112,12 @@ public class FilePhonebook {
                             Kontak ambilNomor = penyimpananKontak.get(namaYangInginDiTelepon);
                             String cekDataStatus = ambilNomor.status;
                             if (cekDataStatus.equalsIgnoreCase("Blokir")){
-                                System.out.println("Kontak bernama '" + namaYangInginDiTelepon + "' tidak bisa ditelpon dikarenakan sudah di-blokir");
+                                System.out.println("\nKontak bernama '" + namaYangInginDiTelepon + "' tidak bisa ditelpon dikarenakan sudah di-blokir");
                             }
                             else {
                                 String noTelp = ambilNomor.nomorHP;
                                 System.out.println("\nMemanggil " + namaYangInginDiTelepon + " di nomor " + noTelp + ".");
                             }
-                            
                         }
                         break;
                     
@@ -137,6 +132,7 @@ public class FilePhonebook {
                             break;
                         }
                         else {
+                            System.out.println();
                             Kontak ubahStatus = penyimpananKontak.get(namaKontakYangInginDirubahStatusnya);
                             ubahStatus.status = "Blokir";
                             System.out.println("\nKontak bernama '" + namaKontakYangInginDirubahStatusnya + "' status sudah di-blokir!");
